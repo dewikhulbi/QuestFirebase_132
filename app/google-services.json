@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "345970357020",
+    "project_id": "pam15-37601",
+    "storage_bucket": "pam15-37601.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345970357020:android:36a397ee08ebcf016d80d9",
+        "android_client_info": {
+          "package_name": "com.example.meet15"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiArvKbwX8txdHAnZlN-me6AupWpJY1Q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
