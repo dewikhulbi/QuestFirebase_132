@@ -11,9 +11,9 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
-class HomeMhsViewModel (
+class HomeMhsViewModel(
     private val RepoMhs: RepositoryMhs
-) : ViewModel(){
+) : ViewModel() {
 
     var mhsUIState: HomeUiState by mutableStateOf(HomeUiState.Loading)
         private set
@@ -22,7 +22,7 @@ class HomeMhsViewModel (
         getMhs()
     }
 
-    fun getMhs(){
+    fun getMhs() {
         viewModelScope.launch {
             RepoMhs.getAllMahasiswa().onStart {
                 mhsUIState = HomeUiState.Loading
@@ -31,7 +31,7 @@ class HomeMhsViewModel (
                     mhsUIState = HomeUiState.Error(e = it)
                 }
                 .collect {
-                    mhsUIState = if (it.isEmpty()){
+                    mhsUIState = if (it.isEmpty()) {
                         HomeUiState.Error(Exception("Belum ada data mahsiswa"))
                     } else {
                         HomeUiState.Success(it)
@@ -42,19 +42,23 @@ class HomeMhsViewModel (
 
     fun deleteMhs(mahasiswa: Mahasiswa) {
         viewModelScope.launch {
-        try { RepoMhs.deleteMhs(mahasiswa)
-        } catch (e: Exception) {
-            mhsUIState = HomeUiState.Error(e)
+            try {
+                RepoMhs.deleteMhs(mahasiswa)
+            } catch (e: Exception) {
+                mhsUIState = HomeUiState.Error(e)
+            }
         }
-    }
     }
 
 }
-sealed class HomeUiState{
+
+sealed class HomeUiState {
     //loading
     object Loading : HomeUiState()
+
     //sukses
     data class Success(val data: List<Mahasiswa>) : HomeUiState()
+
     //error
     data class Error(val e: Throwable) : HomeUiState()
 }
