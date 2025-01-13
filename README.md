@@ -13,3 +13,10 @@ Berhasil Ditambahkan
 Berhasil dihapus
 
 ![image](https://github.com/user-attachments/assets/909e50a2-5132-4bfe-b342-9a209705a4c2)
+
+
+
+![image](https://github.com/user-attachments/assets/07dcd268-041e-4819-acda-f71da023d525)
+
+
+![image](https://github.com/user-attachments/assets/a4db9d8b-c723-42f6-9dfd-6b339a463f96)
